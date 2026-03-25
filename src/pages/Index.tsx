@@ -8,8 +8,8 @@ import { AboutQuote } from "@/components/ui/about-quote"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 import { Label } from "@/components/ui/label"
-import { Textarea } from "@/components/ui/textarea"
-import { MailIcon, PhoneIcon, MapPinIcon } from "lucide-react"
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+import { MapPinIcon, CalendarIcon, UsersIcon } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { useEffect, useRef } from "react"
 
@@ -34,29 +34,18 @@ export default function Index() {
         const isAtTop = pricingSection.scrollTop === 0
         const isAtBottom = pricingSection.scrollTop + pricingSection.clientHeight >= pricingSection.scrollHeight - 1
 
-        if (delta > 0 && !isAtBottom) {
-          return
-        }
-
-        if (delta < 0 && !isAtTop) {
-          return
-        }
+        if (delta > 0 && !isAtBottom) return
+        if (delta < 0 && !isAtTop) return
 
         if (delta < 0 && isAtTop) {
           e.preventDefault()
-          scrollContainer.scrollTo({
-            left: 1 * containerWidth,
-            behavior: "smooth",
-          })
+          scrollContainer.scrollTo({ left: 1 * containerWidth, behavior: "smooth" })
           return
         }
 
         if (delta > 0 && isAtBottom) {
           e.preventDefault()
-          scrollContainer.scrollTo({
-            left: 3 * containerWidth,
-            behavior: "smooth",
-          })
+          scrollContainer.scrollTo({ left: 3 * containerWidth, behavior: "smooth" })
           return
         }
       }
@@ -66,29 +55,18 @@ export default function Index() {
         const isAtTop = aboutSection.scrollTop === 0
         const isAtBottom = aboutSection.scrollTop + aboutSection.clientHeight >= aboutSection.scrollHeight - 1
 
-        if (delta > 0 && !isAtBottom) {
-          return
-        }
-
-        if (delta < 0 && !isAtTop) {
-          return
-        }
+        if (delta > 0 && !isAtBottom) return
+        if (delta < 0 && !isAtTop) return
 
         if (delta < 0 && isAtTop) {
           e.preventDefault()
-          scrollContainer.scrollTo({
-            left: 2 * containerWidth,
-            behavior: "smooth",
-          })
+          scrollContainer.scrollTo({ left: 2 * containerWidth, behavior: "smooth" })
           return
         }
 
         if (delta > 0 && isAtBottom) {
           e.preventDefault()
-          scrollContainer.scrollTo({
-            left: 4 * containerWidth,
-            behavior: "smooth",
-          })
+          scrollContainer.scrollTo({ left: 4 * containerWidth, behavior: "smooth" })
           return
         }
       }
@@ -98,20 +76,12 @@ export default function Index() {
         const isAtTop = contactSection.scrollTop === 0
         const isAtBottom = contactSection.scrollTop + contactSection.clientHeight >= contactSection.scrollHeight - 1
 
-        if (delta > 0 && !isAtBottom) {
-          return
-        }
-
-        if (delta < 0 && !isAtTop) {
-          return
-        }
+        if (delta > 0 && !isAtBottom) return
+        if (delta < 0 && !isAtTop) return
 
         if (delta < 0 && isAtTop) {
           e.preventDefault()
-          scrollContainer.scrollTo({
-            left: 3 * containerWidth,
-            behavior: "smooth",
-          })
+          scrollContainer.scrollTo({ left: 3 * containerWidth, behavior: "smooth" })
           return
         }
 
@@ -131,10 +101,7 @@ export default function Index() {
           targetSection = Math.max(currentSection - 1, 0)
         }
 
-        scrollContainer.scrollTo({
-          left: targetSection * containerWidth,
-          behavior: "smooth",
-        })
+        scrollContainer.scrollTo({ left: targetSection * containerWidth, behavior: "smooth" })
       }
     }
 
@@ -155,33 +122,55 @@ export default function Index() {
         className="relative z-10 flex h-screen w-full overflow-x-auto overflow-y-hidden scroll-smooth snap-x snap-mandatory hide-scrollbar"
         style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
       >
+        {/* HERO */}
         <section id="home" className="flex min-w-full snap-start items-center justify-center px-4 py-20">
           <div className="mx-auto max-w-4xl">
             <div className="text-center px-0 leading-5">
+              <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-4 py-1.5 text-sm text-gray-300 backdrop-blur-sm font-open-sans-custom">
+                <span>📍</span> Нижний Новгород · Ошарская · 25 апреля, 16:00
+              </div>
+
               <h1 className="mb-8 text-balance text-5xl tracking-tight text-white [text-shadow:_0_4px_20px_rgb(0_0_0_/_60%)] md:text-6xl lg:text-8xl">
-                <span className="font-open-sans-custom not-italic">Идея.</span>{" "}
-                <span className="font-serif italic">Промпт.</span>{" "}
-                <span className="font-open-sans-custom not-italic">Результат.</span>
+                <span className="font-open-sans-custom not-italic">IT</span>{" "}
+                <span className="font-serif italic">Квартирник</span>
               </h1>
 
-              <p className="mb-8 mx-auto max-w-2xl text-pretty leading-relaxed text-gray-300 [text-shadow:_0_2px_10px_rgb(0_0_0_/_50%)] font-thin font-open-sans-custom tracking-wide leading-7 text-xl">
-                дизайнер, разработчик или просто любопытный — возьми идею,{" "}
-                <span className="font-serif italic">опиши</span> её и наблюдай, как она оживает
+              <p className="mb-8 mx-auto max-w-2xl text-pretty leading-relaxed text-gray-300 [text-shadow:_0_2px_10px_rgb(0_0_0_/_50%)] font-thin font-open-sans-custom tracking-wide text-xl">
+                спикеры, нетворкинг,{" "}
+                <span className="font-serif italic">IT-мафия</span>,{" "}
+                кофе и пицца — для айтишников и тех, кто только хочет в IT
               </p>
 
+              <div className="flex flex-wrap justify-center gap-3 mb-8 text-sm text-gray-400 font-open-sans-custom">
+                <span className="flex items-center gap-1.5 rounded-full border border-white/10 bg-white/5 px-3 py-1">🎤 Спикеры</span>
+                <span className="flex items-center gap-1.5 rounded-full border border-white/10 bg-white/5 px-3 py-1">🃏 IT-мафия</span>
+                <span className="flex items-center gap-1.5 rounded-full border border-white/10 bg-white/5 px-3 py-1">🤝 Нетворкинг</span>
+                <span className="flex items-center gap-1.5 rounded-full border border-white/10 bg-white/5 px-3 py-1">🍕 Пицца & кофе</span>
+              </div>
+
               <div className="flex justify-center">
-                <ShinyButton className="px-8 py-3 text-base">начать</ShinyButton>
+                <ShinyButton
+                  className="px-8 py-3 text-base"
+                  onClick={() => {
+                    const el = document.getElementById("contact")
+                    if (el) el.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "start" })
+                  }}
+                >
+                  Зарегистрироваться
+                </ShinyButton>
               </div>
             </div>
           </div>
         </section>
 
+        {/* ПРОГРАММА */}
         <section id="features" className="flex min-w-full snap-start items-center justify-center px-4 py-20">
           <div className="mx-auto max-w-7xl w-full">
             <Feature />
           </div>
         </section>
 
+        {/* СПИКЕРЫ */}
         <section
           id="pricing"
           ref={pricingSectionRef}
@@ -201,17 +190,17 @@ export default function Index() {
           <div className="relative z-10 mx-auto w-full max-w-5xl">
             <div className="mx-auto mb-10 max-w-2xl text-center">
               <h1 className="text-4xl font-extrabold tracking-tight lg:text-6xl text-white [text-shadow:_0_4px_20px_rgb(0_0_0_/_60%)] font-open-sans-custom">
-                Тарифы и цены
+                Спикеры
               </h1>
               <p className="text-gray-300 mt-4 text-sm md:text-base font-open-sans-custom [text-shadow:_0_2px_10px_rgb(0_0_0_/_50%)]">
-                Выберите подходящий план. От индивидуальных авторов до корпоративных команд — гибкие
-                тарифы для вашего успеха.
+                Живые истории, реальный опыт — без корпоративных слайдов и скучных презентаций.
               </p>
             </div>
             <BentoPricing />
           </div>
         </section>
 
+        {/* FAQ */}
         <section
           id="about"
           ref={aboutSectionRef}
@@ -231,20 +220,22 @@ export default function Index() {
           <div className="relative z-10 mx-auto w-full max-w-7xl">
             <div className="mx-auto mb-10 max-w-2xl text-center">
               <h1 className="text-4xl font-extrabold tracking-tight lg:text-6xl text-white [text-shadow:_0_4px_20px_rgb(0_0_0_/_60%)] font-open-sans-custom">
-                О нас
+                Вопросы и ответы
               </h1>
               <p className="text-gray-300 mt-4 text-sm md:text-base font-open-sans-custom [text-shadow:_0_2px_10px_rgb(0_0_0_/_50%)]">
-                Узнайте больше о нашей миссии, видении и ценностях, которые движут нами.
+                Всё, что хотел спросить, но не решался.
               </p>
             </div>
             <AboutQuote />
           </div>
         </section>
 
+        {/* РЕГИСТРАЦИЯ */}
         <section
           id="contact"
           ref={contactSectionRef}
           className="relative min-w-full snap-start overflow-y-auto px-4 pt-24 pb-20"
+          style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
         >
           <div
             aria-hidden="true"
@@ -258,66 +249,69 @@ export default function Index() {
 
           <div className="relative z-10 mx-auto w-full max-w-5xl mt-[5vh]">
             <ContactCard
-              title="Свяжитесь с нами"
-              description="Если у вас есть вопросы о наших услугах или нужна помощь, заполните форму. Мы стараемся отвечать в течение 1 рабочего дня."
+              title="Записаться на квартирник"
+              description="Места ограничены — до 30 человек. Заполни форму и мы пришлём точный адрес и напоминание накануне."
               contactInfo={[
                 {
-                  icon: MailIcon,
-                  label: "Почта",
-                  value: "hello@promptcraft.dev",
-                },
-                {
-                  icon: PhoneIcon,
-                  label: "Телефон",
-                  value: "+7 (495) 123-45-67",
+                  icon: CalendarIcon,
+                  label: "Дата и время",
+                  value: "25 апреля, 16:00",
                 },
                 {
                   icon: MapPinIcon,
-                  label: "Адрес",
-                  value: "Москва, Россия",
-                  className: "col-span-2",
+                  label: "Место",
+                  value: "Нижний Новгород, Ошарская",
+                },
+                {
+                  icon: UsersIcon,
+                  label: "Формат",
+                  value: "До 30 человек · Бесплатно",
                 },
               ]}
             >
-              <form action="" className="w-full space-y-4">
+              <form className="w-full space-y-4">
                 <div className="flex flex-col gap-2">
                   <Label className="text-white [text-shadow:_0_2px_6px_rgb(0_0_0_/_40%)] font-open-sans-custom">
                     Имя
                   </Label>
                   <Input
                     type="text"
-                    className="bg-white/10 border-white/20 text-white placeholder:text-gray-400 [text-shadow:_0_2px_6px_rgb(0_0_0_/_40%)]"
+                    placeholder="Как тебя зовут?"
+                    className="bg-white/10 border-white/20 text-white placeholder:text-gray-400"
                   />
                 </div>
                 <div className="flex flex-col gap-2">
                   <Label className="text-white [text-shadow:_0_2px_6px_rgb(0_0_0_/_40%)] font-open-sans-custom">
-                    Email
+                    Контакт (Telegram / телефон)
                   </Label>
                   <Input
-                    type="email"
-                    className="bg-white/10 border-white/20 text-white placeholder:text-gray-400 [text-shadow:_0_2px_6px_rgb(0_0_0_/_40%)]"
+                    type="text"
+                    placeholder="@username или +7..."
+                    className="bg-white/10 border-white/20 text-white placeholder:text-gray-400"
                   />
                 </div>
                 <div className="flex flex-col gap-2">
                   <Label className="text-white [text-shadow:_0_2px_6px_rgb(0_0_0_/_40%)] font-open-sans-custom">
-                    Телефон
+                    IT-опыт
                   </Label>
-                  <Input
-                    type="tel"
-                    className="bg-white/10 border-white/20 text-white placeholder:text-gray-400 [text-shadow:_0_2px_6px_rgb(0_0_0_/_40%)]"
-                  />
-                </div>
-                <div className="flex flex-col gap-2">
-                  <Label className="text-white [text-shadow:_0_2px_6px_rgb(0_0_0_/_40%)] font-open-sans-custom">
-                    Сообщение
-                  </Label>
-                  <Textarea className="bg-white/10 border-white/20 text-white placeholder:text-gray-400 [text-shadow:_0_2px_6px_rgb(0_0_0_/_40%)]" />
+                  <Select>
+                    <SelectTrigger className="bg-white/10 border-white/20 text-white font-open-sans-custom">
+                      <SelectValue placeholder="Выбери свой уровень" />
+                    </SelectTrigger>
+                    <SelectContent className="bg-gray-900 border-white/20 text-white">
+                      <SelectItem value="none" className="text-white hover:bg-white/10 focus:bg-white/10 focus:text-white">Нет опыта — только интересуюсь</SelectItem>
+                      <SelectItem value="student" className="text-white hover:bg-white/10 focus:bg-white/10 focus:text-white">Учусь / прохожу курсы</SelectItem>
+                      <SelectItem value="junior" className="text-white hover:bg-white/10 focus:bg-white/10 focus:text-white">Junior (до 1 года)</SelectItem>
+                      <SelectItem value="middle" className="text-white hover:bg-white/10 focus:bg-white/10 focus:text-white">Middle (1–4 года)</SelectItem>
+                      <SelectItem value="senior" className="text-white hover:bg-white/10 focus:bg-white/10 focus:text-white">Senior / Lead (4+ лет)</SelectItem>
+                    </SelectContent>
+                  </Select>
                 </div>
                 <Button
-                  className="w-full bg-white text-black hover:bg-gray-100 [text-shadow:_0_1px_2px_rgb(0_0_0_/_10%)] font-open-sans-custom"
+                  className="w-full bg-white text-black hover:bg-gray-100 [text-shadow:none] font-open-sans-custom font-semibold"
                   type="button"
                 >
-                  Отправить
+                  Зарегистрироваться 🚀
                 </Button>
               </form>
             </ContactCard>
