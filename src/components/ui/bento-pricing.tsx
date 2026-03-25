@@ -53,36 +53,31 @@ export function BentoPricing() {
   return (
     <div className="grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-8">
       <SpeakerCard
-        name="Алексей Морозов"
-        role="Senior Frontend Developer · Т-Банк"
-        topic="Карьера в IT: с нуля до первого оффера за 8 месяцев"
-        emoji="👨‍💻"
-        featured
-        photo="https://cdn.poehali.dev/projects/443edf92-cfbc-430a-9ebe-103da1b0a2f6/files/4e1d9574-8f8e-457a-b1e6-eadc4fb5563c.jpg"
+        name="Наталья Гордеева"
+        role="Выпускница курса · Смена профессии"
+        topic="Легко ли сменить профессию из гуманитария в IT: личный опыт"
+        emoji="🎓"
         className="lg:col-span-4"
       />
       <SpeakerCard
-        name="Мария Соколова"
-        role="Product Manager · Яндекс"
-        topic="Как перейти в IT без технического бэкграунда"
-        emoji="👩‍💼"
-        photo="https://cdn.poehali.dev/projects/443edf92-cfbc-430a-9ebe-103da1b0a2f6/files/3b0470e6-4831-4158-92b6-ac118fc1cf1b.jpg"
+        name="Алексей Солодовников"
+        role="IT-специалист"
+        topic="Как не выгореть айтишнику: практика выживания в индустрии"
+        emoji="🔥"
         className="lg:col-span-4"
       />
       <SpeakerCard
-        name="Дмитрий Кузнецов"
-        role="ML Engineer · Сбер"
-        topic="AI в продакшене: что реально работает в 2025"
-        emoji="🤖"
-        photo="https://cdn.poehali.dev/projects/443edf92-cfbc-430a-9ebe-103da1b0a2f6/files/f12fb36c-6664-4364-ae2e-55f69ab0319f.jpg"
+        name="Оксана Иванова"
+        role="HR-специалист"
+        topic="Подвохи на собеседовании и как отвечать на странные вопросы"
+        emoji="💼"
         className="lg:col-span-5"
       />
       <SpeakerCard
-        name="Анна Волкова"
-        role="Tech Lead · EPAM"
-        topic="Нетворкинг для айтишников: как находить крутых людей"
-        emoji="🌐"
-        photo="https://cdn.poehali.dev/projects/443edf92-cfbc-430a-9ebe-103da1b0a2f6/files/49bc12a2-b687-41e9-b090-5ed65a369da4.jpg"
+        name="Василий"
+        role="IT-эксперт"
+        topic="Как ИИ меняет рынок IT: что происходит прямо сейчас"
+        emoji="🤖"
         className="lg:col-span-3"
       />
     </div>

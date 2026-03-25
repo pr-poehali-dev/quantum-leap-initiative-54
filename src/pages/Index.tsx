@@ -175,7 +175,7 @@ export default function Index() {
           </div>
           <ContactCard
             title="Записаться на квартирник"
-            description="Места ограничены — до 30 человек. Заполни форму и мы пришлём точный адрес и напоминание накануне."
+            description="Места ограничены — до 70 человек. Заполни форму и мы пришлём точный адрес и напоминание накануне."
             contactInfo={[
               {
                 icon: CalendarIcon,
@@ -190,7 +190,7 @@ export default function Index() {
               {
                 icon: UsersIcon,
                 label: "Формат",
-                value: "До 30 человек · Бесплатно",
+                value: "До 70 человек · Бесплатно",
               },
             ]}
           >
